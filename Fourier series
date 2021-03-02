@@ -1,0 +1,16 @@
+clear;
+pos = 1;
+t = 0:0.01:1;
+for i = [1,3,5,10,50,500]
+    subplot(3,2,pos);
+    pos = pos+1;
+    sum = zeros(1, length(i));
+for k=1:2:2*i-1
+    sum = sum+(4/pi)*(sin(2*pi*t*k)/k);
+end
+hold on;
+sq = square(2*pi*t);
+plot(t,sq);
+plot(t,sum);
+title("Approximation with"+i+" sine functions")
+end
