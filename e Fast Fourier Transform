@@ -1,0 +1,14 @@
+clear;
+t = 0:0.01:1;
+hold on;
+sq = square(2*pi*t);
+for i = 1:20:2*i-1
+    k=i;
+    n=(-1)^k;
+    if n~=-1
+        k =1;
+    end
+    sum = (4/pi)*(sin(2*pi*t*k)/k);
+    plot(t,sum);
+end
+plot(t,sq);
